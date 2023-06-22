@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
+import { useParkingsContext } from '../hooks/useParkingsContext'
 
 const ParkingForm = () => {
   const { dispatch } = useParkingsContext()
@@ -13,9 +13,9 @@ const ParkingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const workout = {title, load, reps}
+    const workout = {vnumber, duration}
     
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('/api/parkings', {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
