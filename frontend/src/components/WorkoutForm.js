@@ -17,7 +17,7 @@ const ParkingForm = () => {
     
     const response = await fetch('/api/parkings', {
       method: 'POST',
-      body: JSON.stringify(workout),
+      body: JSON.stringify(parking),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -34,7 +34,7 @@ const ParkingForm = () => {
       setVnumber('')
       setDuration('')
       
-      dispatch({type: 'CREATE_', payload: json})
+      dispatch({type: 'CREATE_PATKING', payload: json})
     }
 
   }
@@ -66,4 +66,4 @@ const ParkingForm = () => {
   )
 }
 
-export default WorkoutForm
+export default ParkingForm
