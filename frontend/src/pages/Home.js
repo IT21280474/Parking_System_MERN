@@ -2,8 +2,8 @@ import { useEffect } from "react"
 import { useParkingsContext } from "../hooks/useParkingsContext"
 
 // components
-import WorkoutDetails from "../components/WorkoutDetails"
-import WorkoutForm from "../components/WorkoutForm"
+import WorkoutDetails from "../components/ParkingDetails"
+import WorkoutForm from "../components/ParkingForm"
 
 const Home = () => {
   const { workouts, dispatch } = useParkingsContext()
