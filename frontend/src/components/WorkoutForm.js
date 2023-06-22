@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParkingsContext } from '../hooks/useParkingsContext'
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 const ParkingForm = () => {
   const { dispatch } = useParkingsContext()
@@ -13,11 +13,11 @@ const ParkingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const workout = {vnumber, duration}
+    const workout = {title, load, reps}
     
-    const response = await fetch('/api/parkings', {
+    const response = await fetch('/api/workouts', {
       method: 'POST',
-      body: JSON.stringify(parking),
+      body: JSON.stringify(workout),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -34,7 +34,7 @@ const ParkingForm = () => {
       setVnumber('')
       setDuration('')
       
-      dispatch({type: 'CREATE_PATKING', payload: json})
+      dispatch({type: 'CREATE_', payload: json})
     }
 
   }
@@ -66,4 +66,4 @@ const ParkingForm = () => {
   )
 }
 
-export default ParkingForm
+export default WorkoutForm
