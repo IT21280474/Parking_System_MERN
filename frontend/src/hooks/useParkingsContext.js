@@ -1,7 +1,7 @@
 import { ParkingsContext } from "../context/ParkingsContext"
 import { useContext } from "react"
 
-export const useWorkoutsContext = () => {
+export const useParkingsContext = () => {
   const context = useContext(ParkingsContext)
 
   if(!context) {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
+import { useParkingsContext } from '../hooks/useParkingsContext'
 
 const ParkingForm = () => {
   const { dispatch } = useParkingsContext()
