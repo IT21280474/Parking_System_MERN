@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
-const WorkoutForm = () => {
-  const { dispatch } = useWorkoutsContext()
+const ParkingForm = () => {
+  const { dispatch } = useParkingsContext()
 
-  const [title, setTitle] = useState('')
-  const [load, setLoad] = useState('')
-  const [reps, setReps] = useState('')
+  const [vnumber, setVnumber] = useState('')
+  const [duration, setDuration] = useState('')
+  
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
 
@@ -31,10 +31,10 @@ const WorkoutForm = () => {
     if (response.ok) {
       setEmptyFields([])
       setError(null)
-      setTitle('')
-      setLoad('')
-      setReps('')
-      dispatch({type: 'CREATE_WORKOUT', payload: json})
+      setVnumber('')
+      setDuration('')
+      
+      dispatch({type: 'CREATE_', payload: json})
     }
 
   }
@@ -45,29 +45,22 @@ const WorkoutForm = () => {
 
       <label>Vehicle Number:</label>
       <input 
-        type="text" 
-        onChange={(e) => setTitle(e.target.value)} 
-        value={title}
-        className={emptyFields.includes('title') ? 'error' : ''}
+        type="String" 
+        onChange={(e) => setVnumber(e.target.value)} 
+        value={vnumber}
+        className={emptyFields.includes('vnumber') ? 'error' : ''}
       />
 
-      <label>Load (in kg):</label>
+      <label>Duration:</label>
       <input 
         type="number" 
-        onChange={(e) => setLoad(e.target.value)} 
-        value={load}
-        className={emptyFields.includes('load') ? 'error' : ''}
+        onChange={(e) => setDuration(e.target.value)} 
+        value={duration}
+        className={emptyFields.includes('duration') ? 'error' : ''}
       />
 
-      <label>Number of Reps:</label>
-      <input 
-        type="number" 
-        onChange={(e) => setReps(e.target.value)} 
-        value={reps}
-        className={emptyFields.includes('reps') ? 'error' : ''}
-      />
 
-      <button>Add Workout</button>
+      <button>Add Parking Vehicle</button>
       {error && <div className="error">{error}</div>}
     </form>
   )
