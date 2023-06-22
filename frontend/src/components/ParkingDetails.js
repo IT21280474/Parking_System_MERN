@@ -18,6 +18,7 @@ const WorkoutDetails = ({ parking }) => {
   }
 
   return (
+    //Vehicle details
     <div className="parking-details">
       <h4>{parking.vnumber}</h4>
       <p><strong>Duration (Hours): </strong>{parking.duration}</p>
