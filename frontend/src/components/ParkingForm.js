@@ -13,7 +13,7 @@ const ParkingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const workout = {title, load, reps}
+    const workout = {vnumber, duration}
     
     const response = await fetch('/api/workouts', {
       method: 'POST',
