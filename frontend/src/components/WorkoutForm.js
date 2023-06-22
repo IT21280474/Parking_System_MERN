@@ -66,4 +66,4 @@ const ParkingForm = () => {
   )
 }
 
-export default WorkoutForm
+export default ParkingForm
